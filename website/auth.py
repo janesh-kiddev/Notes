@@ -23,9 +23,9 @@ def sign_up():
         elif len(firstname) < 2:
             flash("FirstName must be greater than 1 character",category='error')
         elif password1 != password2:
-            flash("password must be equal to the confirmed password",category='error')
-        elif len(password1) < 7:
-            flash("The password is too short must be greater than 7",category='error')
+            flash("password should be same as confirm password",category='error')
+        elif len(password1) < 5:
+            flash("The password is too short must be greater than 5",category='error')
         else:
             flash("Account Created",category='Success')
 
