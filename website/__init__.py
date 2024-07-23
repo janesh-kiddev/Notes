@@ -1,8 +1,6 @@
 from flask import Flask
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-from flask_login import LoginManager
 
 db = SQLAlchemy()
 db_name = "database.db"
@@ -22,18 +20,18 @@ def create_app():
 
     from .models import User, Note
     
-    create_database(app)
+    with app.app_context():
+        create_database()
 
     return app
 
 
-def create_database(app):
+def create_database():
     if not path.exists('website/' + db_name):
-        db.create_all(app)
+        db.create_all()
         print('Created Database!')
-
 
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True) 
+    app.run(debug=True)
