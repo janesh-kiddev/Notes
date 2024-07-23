@@ -34,8 +34,4 @@ def create_database():
 
 if __name__ == '__main__':
     app = create_app()
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True) 
->>>>>>> f6f0fe58dca47a4a22c0f0af0d6bc8769b6b065d
